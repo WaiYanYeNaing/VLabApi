@@ -13,7 +13,7 @@ router.get('/', (req,res) => {
         ...video,
         user: users.find(user => user.id == video.user_id),
         // categories: v_categories.filter(v_c => video.id == v_c.video_id).map(item => categories.find(category => category.id == item.category_id))
-        categories: categories.find(category => category.id == video.category_id)
+        categories: video.category_id.map(m => categories.find(f => f.id == m))
     })))
 })
 
