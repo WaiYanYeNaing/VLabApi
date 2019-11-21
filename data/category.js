@@ -15,6 +15,10 @@ const categories = [
         id: 4,
         name: 'horror'
     },
+    {
+        id: 5,
+        name: 'thriller'
+    }
 ]
 
 module.exports = categories

@@ -12,7 +12,8 @@ router.get('/', (req,res) => {
     res.json(videos.map(video => ({
         ...video,
         user: users.find(user => user.id == video.user_id),
-        categories: v_categories.filter(v_c => video.id == v_c.video_id).map(item => categories.find(category => category.id == item.category_id))
+        // categories: v_categories.filter(v_c => video.id == v_c.video_id).map(item => categories.find(category => category.id == item.category_id))
+        categories: categories.find(category => category.id == video.category_id)
     })))
 })
 
