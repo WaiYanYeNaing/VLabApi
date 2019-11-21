@@ -24,7 +24,7 @@ router.get('/:id', (req,res) =>{
 })
 
 router.post('/', (req, res) =>{
-    const {video_name, descriptions, user_id} = req.body
+    const {video_name, descriptions, user_id, category_id} = req.body
     if (!video_name) return res.status(400).json({msg: 'Please insert video name!'})
     console.log(uuid.v4())
     const new_video = {
@@ -33,6 +33,7 @@ router.post('/', (req, res) =>{
         descriptions,
         pub_date: moment().format('LLLL'),
         user_id,
+        category_id
     }
 
     videos.push(new_video)
